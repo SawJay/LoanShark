@@ -1,0 +1,101 @@
+:root {
+    --sd-dark-color: #212121;
+    --sd-light-color: #ebebeb;
+}
+
+/* #region Sticky Footer */
+
+html,body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* #endregion */
+
+/* #region Navbar */
+
+nav,footer {
+    background-color: var(--sd-theme-900) !important;
+    color: var(--sd-theme-100);
+}
+
+.nav-link {
+    color: var(--sd-theme-200) !important;
+}
+
+.nav-brand {
+    color: var(--sd-theme-100) !important;
+}
+
+.nav-link.active:hover {
+    color: var(--sd-theme-400) !important;
+    font-weight: 600;
+}
+
+.nav-link.active {
+    color: var(--sd-theme-100) !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--sd-theme-400) !important;
+}
+
+footer .bi {
+    color: var(--sd-theme-200);
+    font-size: 1.5rem;
+    padding-left: .5rem;
+    transition: color 0.25s;
+}
+
+footer .bi:hover {
+    color: var(--sd-theme-core);
+}
+
+/* #endregion Navbar */
+
+.btn-primary {
+    --bs-btn-bg: var(--sd-theme-600);
+    --bs-btn-border-color: var(--sd-theme-600);
+    --bs-btn-hover-bg: var(--sd-theme-700);
+    --bs-btn-hover-border-color: var(--sd-theme-700);
+    --bs-btn-active-bg: var(--sd-theme-800);
+    --bs-btn-active-border-color: var(--sd-theme-800);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--sd-theme-600);
+    --bs-btn-border-color: var(--sd-theme-600);
+    --bs-btn-hover-bg: var(--sd-theme-700);
+    --bs-btn-hover-border-color: var(--sd-theme-700);
+    --bs-btn-active-bg: var(--sd-theme-800);
+    --bs-btn-active-border-color: var(--sd-theme-800);
+}
+
+.app-logo {
+    max-width: 450px;
+}
+
+.checklist {
+    list-style-type: none;
+}
+
+.checklist .bi {
+    color: var(--sd-theme-dark);
+}
+
+.devicons {
+    font-size: 3.5rem;
+}
