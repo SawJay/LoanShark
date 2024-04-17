@@ -144,6 +144,14 @@ footer .bi:hover {
     font-weight: bold;
 }
 
+#totalInterest {
+    font-weight: bold;
+}
+
+#totalPrincipal {
+    font-weight: bold;
+}
+
 #monthlyPayment {
     font-weight: bold;
     color: green;

@@ -10,7 +10,11 @@ function getValues() {
 
   let monthlyPayment = getMonthlyPayment(loanAmount, loanLength, loanRate);
 
-  displayLoan(monthlyPayment);
+  let totalCostOfLoan =  calculateTotalCostOfLoan(monthlyPayment, loanLength);
+
+  let totalInterestOfLoan = calculateTotalInterestOfLoan(loanAmount, totalCostOfLoan)
+  
+  displayLoan(monthlyPayment, totalCostOfLoan, totalInterestOfLoan, loanAmount);
 
   let monthlyPayments = calculateLoan(monthlyPayment, loanAmount, loanLength, loanRate);
 
@@ -25,6 +29,23 @@ function getMonthlyPayment(loanAmount, loanLength, loanRate) {
 
   return monthlyPayment;
 
+}
+
+// get total interest
+function calculateTotalCostOfLoan (monthlyPayment, loanLength) {
+
+  let totalCostOfLoan = monthlyPayment * loanLength;
+  
+  return totalCostOfLoan;
+
+}
+
+// calculate total interest of Loan
+function calculateTotalInterestOfLoan(loanAmount, totalCostOfLoan){
+  
+  let totalInterestOfLoan = totalCostOfLoan - loanAmount;
+  
+  return totalInterestOfLoan;
 }
 
 function calculateLoan(monthlyPayment, loanAmount, loanLength, loanRate) {
@@ -63,10 +84,19 @@ function calculateLoan(monthlyPayment, loanAmount, loanLength, loanRate) {
 }
 
 // displaying main monthly payment
-function displayLoan(monthlyPayment, totalCost) {
+function displayLoan(monthlyPayment, totalCost, totalInterestOfLoan, loanAmount) {
 
   let monthlyPaymentPar = document.getElementById('monthlyPayment');
   monthlyPaymentPar.innerHTML = monthlyPayment.toFixed(2);
+
+  let totalCostDisplay = document.getElementById('totalCost');
+  totalCostDisplay.innerHTML = totalCost.toFixed(2);
+
+  let totalInterestDisplay = document.getElementById('totalInterest');
+  totalInterestDisplay.innerHTML = totalInterestOfLoan.toFixed(2);
+
+  let totalPrincipleDisplay = document.getElementById('totalPrincipal');
+  totalPrincipleDisplay.innerHTML = loanAmount.toFixed(2);
 
 }
 
