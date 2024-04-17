@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>App Name: A coding challenge</title>
+    <title>LoanShark: A coding challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="#"> <img src="/img/coloredlogosvg.svg" height="30">App Name</a>
+                <a class="navbar-brand" href="#"> <img src="/img/coloredlogosvg.svg" height="30">LoanShark</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,11 +52,92 @@
         </nav>
     </header>
 
-    <main class="container-xxl py-3 mt-5">
-        <h1>APP UI GOES HERE</h1>
-        <label>Secret Message</label>
-        <input id="message" type="text" value="Hi" placeholder="Enter a Message">
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+    <main class="container-xxl py-3 mt-2">
+        <main class="flex-shrink-0">
+            <div class="container mt-4">
+                <h1 class="mt-4">Loan Calculator</h1>
+                <div class="row">
+                    <div class="col loanForm border border-dark">
+                        <div class="row row-cols-1">
+                            <div class="col-4">
+                                <label for="loanAmount">Loan Amount:</label>
+                            </div>
+                            <div class="col">
+                                <input type="number" id="loanAmount" value="25000" name="loanAmount">
+                            </div>
+                            <div class="col">
+                                <label for="loanLength">Term (Months):</label>
+                            </div>
+                            <div class="col">
+                                <input type="number" id="loanLength" value="60" name="loanLength">
+                            </div>
+                            <div class="col">
+                                <label for="loanRate">Interest Rate:</label>
+                            </div>
+                            <div class="col">
+                                <input type="number" id="loanRate" value="5" name="loanRate">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <button type="button" id="btnSubmit"
+                                    class="btn btn-primary">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 loanInfo border border-dark">
+                        <div id="paymentTitle">
+                            <h3>Your Monthly Payments</h3>
+                        </div>
+                        <p id="monthlyPayment" class="text-center display-4">
+                            
+                        </p>
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <label class="text-left m-3">Total Principal:</label>
+                            </div>
+                            <div class="col text-right" id="totalPrincipal">
+
+                            </div>
+                            <div class="col text-left m-3">
+                                <label>Total Interest:</label><br>
+                            </div>
+                            <div class="col text-right" id="totalInterest">
+
+                            </div>
+                            <div class="col text-left m-3">
+                                <label>Total Cost:</label>
+                            </div>
+                            <div class="col text-right" id="totalCost">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <h3 class="mb-2 border-bottom border-1 border-dark">Payment Schedule</h3>
+                        <table class="table table-striped table-hover">
+                            <thead id="tableheader" class="bg-dark text-white">
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Total Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody">
+                                <!-- template data goes here-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </main>
     </main>
 
     <footer class="container-fluid py-3">
@@ -100,7 +181,7 @@
 
     <script>
         let button = document.getElementById('btnSubmit');
-        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', getValues);
     </script>
 
 </body>

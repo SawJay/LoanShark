@@ -99,3 +99,52 @@ footer .bi:hover {
 .devicons {
     font-size: 3.5rem;
 }
+
+.loanForm {
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.loanForm input {
+    width: 100%;
+    padding: .5rem;
+}
+
+.loanForm button {
+    float: right;
+}
+
+.loanInfo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#paymentTitle {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#payment {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+#loanBreakDown {
+    text-align: center;
+}
+
+#tableheader {
+    background-color: gray
+}
+
+#totalCost {
+    font-weight: bold;
+}
+
+#monthlyPayment {
+    font-weight: bold;
+    color: green;
+}
