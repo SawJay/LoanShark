@@ -87,16 +87,16 @@ function calculateLoan(monthlyPayment, loanAmount, loanLength, loanRate) {
 function displayLoan(monthlyPayment, totalCost, totalInterestOfLoan, loanAmount) {
 
   let monthlyPaymentPar = document.getElementById('monthlyPayment');
-  monthlyPaymentPar.innerHTML = monthlyPayment.toFixed(2);
+  monthlyPaymentPar.innerHTML = monthlyPayment.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
   let totalCostDisplay = document.getElementById('totalCost');
-  totalCostDisplay.innerHTML = totalCost.toFixed(2);
+  totalCostDisplay.innerHTML = totalCost.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
   let totalInterestDisplay = document.getElementById('totalInterest');
-  totalInterestDisplay.innerHTML = totalInterestOfLoan.toFixed(2);
+  totalInterestDisplay.innerHTML = totalInterestOfLoan.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
   let totalPrincipleDisplay = document.getElementById('totalPrincipal');
-  totalPrincipleDisplay.innerHTML = loanAmount.toFixed(2);
+  totalPrincipleDisplay.innerHTML = loanAmount.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
 }
 
