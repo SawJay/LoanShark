@@ -104,9 +104,9 @@ function displayPaymentSchedule(monthlyPayments) {
 
   let tableRows = '';
 
-  for (let i = 1; i < monthlyPayments.length; i++) {
+  for (let i = 0; i < monthlyPayments.length; i++) {
     tableRows += `<tr>
-      <td>${monthlyPayments[i].month.toFixed(2)}</td>
+      <td>${monthlyPayments[i].month.toFixed(0)}</td>
       <td>${monthlyPayments[i].payment.toFixed(2)}</td>
       <td>${monthlyPayments[i].principle.toFixed(2)}</td>
       <td>${monthlyPayments[i].interest.toFixed(2)}</td>
